@@ -189,6 +189,21 @@ class Server
 
     }
 
+    public function getCurrentFee()
+    {
+        $url = '/fee_stats';
+        $response = $this->apiClient->get($url);
+	$response = $response->getRawData();
+        // check fee_charged exists and its less than 1 XLM
+        if (isset($response['fee_charged']['p95']) && $response['fee_charged']['p95'] < 10000000) {
+          return $response['fee_charged']['p95'];
+        }
+        else {
+          return 100; // default 100 stroops
+        }
+    }
+
+
     /**
      * Submits a base64-encoded transaction to the Stellar network.
      *
