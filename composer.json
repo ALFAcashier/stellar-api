@@ -1,5 +1,5 @@
 {
-    "name": "zulucrypto/stellar-api",
+    "name": "alfacashier/stellar-api",
     "description": "API client for the Stellar network",
     "autoload": {
         "psr-4": {
@@ -17,8 +17,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Zulu Crypto",
-            "email": "zulucrypto@protonmail.com"
+            "name": "Alfacash",
+            "email": "support@alfa.cash"
         }
     ],
     "require-dev": {
