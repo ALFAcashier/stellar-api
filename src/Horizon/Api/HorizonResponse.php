@@ -62,6 +62,7 @@ class HorizonResponse
         // todo: support paging
 
         $records = [];
+        if (!empty($this->rawData['_embedded']['records']) && is_array($this->rawData['_embedded']['records']))
         foreach ($this->rawData['_embedded']['records'] as $rawRecord) {
             $record = $rawRecord;
             unset($record['_links']);
